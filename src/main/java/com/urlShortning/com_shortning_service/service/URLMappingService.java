@@ -1,6 +1,6 @@
 package com.urlShortning.com_shortning_service.service;
 
-import com.urlShortning.com_shortning_service.controller.repository.URLMappingRepository;
+import com.urlShortning.com_shortning_service.repository.URLMappingRepository;
 import com.urlShortning.com_shortning_service.model.ShortUrlMapping;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +25,9 @@ public class URLMappingService {
             int index=randomGenerator.nextInt(longUrl.length());
             stringBuilder.append(longUrl.charAt(index));
         }
-        ShortUrlMapping shortUrlMapping=new ShortUrlMapping(1,longUrl,stringBuilder.toString());
+        ShortUrlMapping shortUrlMapping=new ShortUrlMapping();
+        shortUrlMapping.setShortUrl(stringBuilder.toString());
+        shortUrlMapping.setLongUrl(longUrl);
         urlMappingRepository.save(shortUrlMapping);
         return stringBuilder.toString();
     }

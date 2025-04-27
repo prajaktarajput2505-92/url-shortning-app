@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 public class ShortUrlMapping
 {
         @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         int id;
 
         public ShortUrlMapping() {
@@ -43,7 +44,7 @@ public class ShortUrlMapping
         public void setId(int id) {
                 this.id = id;
         }
-
+        @Column(length = 1000)
         String longUrl;
 
 }

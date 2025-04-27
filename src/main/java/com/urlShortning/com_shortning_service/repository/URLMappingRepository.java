@@ -1,4 +1,4 @@
-package com.urlShortning.com_shortning_service.controller.repository;
+package com.urlShortning.com_shortning_service.repository;
 
 import com.urlShortning.com_shortning_service.model.ShortUrlMapping;
 import org.springframework.data.jpa.repository.JpaRepository;
